@@ -209,3 +209,28 @@ body {
     transform: translate3d(0,0,0);
   }
 }
+.js .js-acordition dt::after{
+  content: "⤴";
+  margin-left: 10px;
+}
+.js .js-acordition dt.ativo:after{
+  content: "⤵";
+}
+.js .js-acordition dd{
+  display: none;
+}
+.js .js-acordition dd.ativo{
+  display: block;
+  animation: slide .5s forwards;
+}
+
+@keyframes slide{
+  from{
+      opacity: 0;
+      max-height: 0;
+  }
+  to{
+    opacity: 1;
+    max-height: 200px;
+  }
+}
