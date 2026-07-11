@@ -1,0 +1,35 @@
+[data-dropdown="menu"] {
+  position: relative;
+}
+[data-dropdown="menu"] .dropdown-menu {
+  display: none;
+}
+ 
+[data-dropdown="menu"]:hover .dropdown-menu,[data-dropdown="menu"].ativo .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu {
+  position: absolute;
+  display: grid;
+  gap: 10px;
+  top: 34px;
+  z-index: 200;
+  padding: 1.2rem 0.7rem;
+  background-color: #e54;
+  border: 2px solid #333;
+}
+.dropdown-menu::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 4px;
+  width: 0;
+  height: 0;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #e54;
+  border-left: 10px solid transparent;
+}
+.dropdown-menu li a:hover {
+  color: #fff;
+}

@@ -17,26 +17,54 @@
   </head>
   <body>
     <div class="grid-container">
-      <nav class="menu">
-        <ul class="menu-lista">
+      <nav class="menu js-menu">
+        <button data-menu="mobile" class="btn-MenuMobile">Menu</button>
+
+        <ul class="menu-lista" data-menulist>
           <li><a href="#animais">Animais</a></li>
+          <li data-dropdown="menu">
+            <a href="#sobre">Sobre</a>
+            <ul class="dropdown-menu">
+              <li><a href="#">A empresa</a></li>
+              <li><a href="#">Equipe</a></li>
+              <li><a href="#">Sociós</a></li>
+              <li><a href="#">Investidores</a></li>
+            </ul>
+          </li>
           <li><a href="#faq">Faq</a></li>
           <li><a href="#contacto">Contacto</a></li>
-          <li><a href="#dev">Dev</a></li>
+          <li>
+            <a href="#dev" data-modal="abrir"
+              >Login
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-arrow-right"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"
+                /></svg
+            ></a>
+          </li>
         </ul>
       </nav>
-      <section class="grid-section animais">
+      <!-- <section class="grid"> -->
+      <section class="grid-section animais" data-anime="scroll" id="animais">
         <h1 class="titulo">Animais Fantásticos</h1>
 
-        <ul class="animais-img js-tabMenu">
+        <ul class="animais-img" data-tab="menu">
           <li><img src="img/imagem1.jpg" /></li>
           <li><img src="img/imagem2.jpg" alt="isisi" /></li>
           <li><img src="img/imagem3.jpg" /></li>
           <li><img src="img/imagem4.jpg" /></li>
           <li><img src="img/imagem5.jpg" /></li>
         </ul>
-        <div class="animais-descricao js-tabContent">
-          <div class="animais-texto">
+        <div class="animais-descricao" data-tab="content">
+          <div class="animais-texto" data-anime="show-down">
             <h2>Raposa</h2>
             <p>
               As raposas são animais mamíferos e onívoros pertencentes à família
@@ -53,7 +81,7 @@
               focinho comprido e uma cauda longa e peluda.
             </p>
           </div>
-          <div class="animais-texto">
+          <div class="animais-texto" data-anime="show-right">
             <h2>Esquilo</h2>
             <p>
               As raposas são animais mamíferos e onívoros pertencentes à família
@@ -84,7 +112,7 @@
               semelhantes às pupilas verticais dos felídeos.
             </p>
           </div>
-          <div class="animais-texto">
+          <div class="animais-texto" data-anime="show-down">
             <h2>Urso</h2>
             <p>
               As raposas são animais mamíferos e onívoros pertencentes à família
@@ -106,7 +134,7 @@
               focinho comprido e uma cauda longa e peluda.
             </p>
           </div>
-          <div class="animais-texto">
+          <div class="animais-texto" data-anime="show-down">
             <h2>Lobo</h2>
             <p>
               As raposas são animais mamíferos e onívoros pertencentes à família
@@ -128,7 +156,7 @@
               semelhantes às pupilas verticais dos felídeos.
             </p>
           </div>
-          <div class="animais-texto">
+          <div class="animais-texto" data-anime="show-right">
             <h2>Macaco</h2>
             <p>
               As raposas são animais mamíferos e onívoros pertencentes à família
@@ -152,7 +180,12 @@
           </div>
         </div>
       </section>
-      <section class="grid-section  js-acordition faq" id="faq">
+      <section
+        class="grid-section faq"
+        data-anime="accordion"
+        data-anime="scroll"
+        id="faq"
+      >
         <h1 class="titulo">Faq</h1>
         <ul class="perguntas-faq">
           <dl>
@@ -187,9 +220,18 @@
           </dl>
         </ul>
       </section>
-      <section class="grid-section contacto" id="contacto">
+      <section class="grid-section numeros" data-anime="scroll">
+        <h1 class="titulo">Números</h1>
+        <div class="numeros-grid" data-numeros-grid></div>
+      </section>
+
+      <section class="grid-section contacto" data-anime="scroll" id="contacto">
         <h1 class="titulo">Contacto</h1>
-        <div class="contacto-img">
+        <div
+          class="contacto-img"
+          data-tooltip
+          aria-label="Endereco próximo ao estacionamento."
+        >
           <img src="img/mapa.png" />
         </div>
         <ul class="contacto-lista">
@@ -197,13 +239,32 @@
           <li>+55 (21) 9999-9999</li>
           <li>Rua do Conde, nº 21</li>
           <li>Rio de Janeiro - RJ</li>
-          <li>Seg à Sex das 8 às 18</li>
+          <li>Doe <span class="btc-preco"> 0</span> bitcoin para nos ajudar</li>
+          <li data-semana="1,2,3,4,5" data-horas="8,18">
+            Seg à Sex das 8 às 18
+          </li>
         </ul>
       </section>
       <footer class="termos">
         <p>Todos os direitos reservados.</p>
       </footer>
-      <script src="js/script.js"></script>
+      <!-- </section> -->
+      <section class="modal-container" data-modal="container">
+        <div class="modal">
+          <button class="fechar" data-modal="fechar">X</button>
+
+          <form action="">
+            <label for="email">Email</label>
+            <input type="email" id="email" />
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" />
+            <div>
+              <button class="btnEntrar">Entrar</button>
+            </div>
+          </form>
+        </div>
+      </section>
     </div>
+    <script type="module" src="js/script.js"></script>
   </body>
 </html>
