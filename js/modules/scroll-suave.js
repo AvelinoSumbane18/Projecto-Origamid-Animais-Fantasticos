@@ -8,7 +8,7 @@ export default function initLinkSuave() {
       const section = document.querySelector(href);
       console.log(section.offsetTop);
 
-      const topo = section.offsetTop;
+      // const topo = section.offsetTop;
       // forma Alternativa
       // window.scrollTo({
       //   top: topo,

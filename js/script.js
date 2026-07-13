@@ -21,6 +21,7 @@ initMenuFixo();
 initModal();
 initTooltip();
 initDropDownMenu();
+initMenuMobile();
 initFuncionamento();
 initAnimaisFetch();
 initBitcoinFetch();

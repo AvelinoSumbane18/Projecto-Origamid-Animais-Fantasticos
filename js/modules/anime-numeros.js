@@ -1,7 +1,6 @@
 export default function initAnimeNumeros() {
   function animaNumeros() {
     const numeros = document.querySelectorAll("[data-numeros-grid] span");
-    let start = 0;
     numeros.forEach((numero) => {
       let total = +numero.innerText;
       let incremento = Math.floor(total / 100);
