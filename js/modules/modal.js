@@ -7,10 +7,16 @@ export default function initModal() {
     event.preventDefault();
     containerModal.classList.toggle("abrir");
   }
-  function fecharModal(event){
-    event.preventDefault()
-    containerModal.classList.remove('abrir');
+  function fecharModal(event) {
+    event.preventDefault();
+    containerModal.classList.remove("abrir");
   }
+
+  // function cliqueForaModal(event) {
+  //   if (event.target === containerModal) {
+  //     containerModal.classList.remove("abrir");
+  //   }
+  // }
 
   botaoLogin.addEventListener("click", abrirModal);
   botaoFechar.addEventListener("click", fecharModal);

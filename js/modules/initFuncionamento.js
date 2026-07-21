@@ -1,6 +1,6 @@
 export default function initFuncionamento() {
   const funcionamento = document.querySelector("[data-semana]");
-  if (funcionamento.length) {
+  if (funcionamento) {
     const diasSemana = funcionamento.dataset.semana.split(",").map(Number);
     const horarioSemana = funcionamento.dataset.horas.split(",").map(Number);
     const dataAgora = new Date();

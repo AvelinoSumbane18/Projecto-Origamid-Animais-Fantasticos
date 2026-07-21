@@ -4,7 +4,6 @@ export default function initTabMenu() {
     '[data-tab="content"] .animais-texto',
   );
   tabContent[0].classList.add("ativo");
-  console.log(tabContent[0] );
   if (tabMenu.length && tabContent.length) {
     tabContent[0].classList.add("ativo");
     function activeTab(index) {
