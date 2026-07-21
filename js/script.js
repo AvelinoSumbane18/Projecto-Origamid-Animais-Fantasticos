@@ -1,5 +1,5 @@
 import LinkSuave from "./modules/scroll-suave.js";
-import initTabMenu from "./modules/tab-menu.js";
+import TabMenu from "./modules/tab-menu.js";
 import Accordion from "./modules/accordion.js";
 import animacaoInitScroll from "./modules/anime-scroll.js";
 import initMenuFixo from "./modules/menu-fixo.js";
@@ -17,10 +17,12 @@ linkSuave.init();
 const accordion= new Accordion('[data-anime="accordion"] dt');
 console.log(accordion.init());
 
+const tabMenu= new TabMenu('[data-tab="menu"] li','[data-tab="content"] .animais-texto') ;
+tabMenu.init();
+
 
 
 //Execucao das funcoes
-initTabMenu();
 animacaoInitScroll();
 initMenuFixo();
 initModal();
