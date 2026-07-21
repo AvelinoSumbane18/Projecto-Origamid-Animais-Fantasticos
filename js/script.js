@@ -1,6 +1,6 @@
 import LinkSuave from "./modules/scroll-suave.js";
 import initTabMenu from "./modules/tab-menu.js";
-import initAccordion from "./modules/accordion.js";
+import Accordion from "./modules/accordion.js";
 import animacaoInitScroll from "./modules/anime-scroll.js";
 import initMenuFixo from "./modules/menu-fixo.js";
 import initModal from "./modules/modal.js";
@@ -14,11 +14,13 @@ import initBitcoinFetch from "./modules/initBitcoinFetch.js";
 const linkSuave= new LinkSuave('[data-menu="suave"] a[href^="#"]');
 linkSuave.init();
 
+const accordion= new Accordion('[data-anime="accordion"] dt');
+console.log(accordion.init());
+
 
 
 //Execucao das funcoes
 initTabMenu();
-initAccordion();
 animacaoInitScroll();
 initMenuFixo();
 initModal();

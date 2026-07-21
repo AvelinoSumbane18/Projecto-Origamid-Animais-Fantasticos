@@ -26,7 +26,9 @@ export default class LinkSuave {
     });
   }
   init() {
-    this.addLinkSuaveEvent();
+    if (this.linksInternos.length) {
+      this.addLinkSuaveEvent();
+    }
     return this;
   }
 }
