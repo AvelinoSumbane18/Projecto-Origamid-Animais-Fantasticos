@@ -3,7 +3,7 @@ import TabMenu from "./modules/tab-menu.js";
 import Accordion from "./modules/accordion.js";
 import animacaoInitScroll from "./modules/anime-scroll.js";
 import initMenuFixo from "./modules/menu-fixo.js";
-import initModal from "./modules/modal.js";
+import Modal from "./modules/modal.js";
 import initTooltip from "./modules/tooltip.js";
 import initDropDownMenu from "./modules/dropdown-menu.js";
 import initMenuMobile from "./modules/menu-mobile.js";
@@ -20,12 +20,14 @@ console.log(accordion.init());
 const tabMenu= new TabMenu('[data-tab="menu"] li','[data-tab="content"] .animais-texto') ;
 tabMenu.init();
 
+const modal= new Modal('[data-modal="abrir"]','[data-modal="fechar"]','[data-modal="container"]') ;
+modal.init();
+
 
 
 //Execucao das funcoes
 animacaoInitScroll();
 initMenuFixo();
-initModal();
 initTooltip();
 initDropDownMenu();
 initMenuMobile();
