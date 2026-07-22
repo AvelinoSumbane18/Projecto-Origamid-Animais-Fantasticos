@@ -16,7 +16,7 @@ export default class LinkSuave {
     event.preventDefault();
     const href = event.currentTarget.getAttribute("href");
     const section = document.querySelector(href);
-    section.scrollIntoView(this.options);
+  section.scrollIntoView(this.options);
   }
 
   addLinkSuaveEvent() {
