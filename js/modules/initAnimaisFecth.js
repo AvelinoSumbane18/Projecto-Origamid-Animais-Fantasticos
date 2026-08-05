@@ -1,4 +1,4 @@
-import initAnimeNumeros from "./anime-numeros.js";
+import AnimeNumeros from "./anime-numeros.js";
 
 export default function initAnimaisFetch() {
   async function animaisFetch(url) {
@@ -10,7 +10,8 @@ export default function initAnimaisFetch() {
         const elemento = createAnimal(animal);
         numeroAnimais.appendChild(elemento);
       });
-      initAnimeNumeros();
+      const animenumeros=new AnimeNumeros("[data-numeros-grid] span","ativo",".numeros");
+      animenumeros.init();
     } catch (error) {
       console.log(error);
     }
